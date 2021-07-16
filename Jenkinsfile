@@ -1,9 +1,10 @@
-echo "---build start---"
-
-stage('Checkout Stage') {
-    echo "---Checkout---"
-}
-
-stage('Push Stage') {
-    echo "---Push Stage---"
+pipeline {
+  agent { docker { image 'python:3.8.5' } }
+  stages {
+    stage('test') {
+      steps {
+        sh '13,17%2.py'
+      }
+    }
+  }
 }
